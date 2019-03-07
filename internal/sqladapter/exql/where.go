@@ -42,7 +42,7 @@ func (w *Where) Hash() string {
 	return w.hash.Hash(w)
 }
 
-// Appends adds the conditions to the ones that already exist.
+// Append: Appends adds the conditions to the ones that already exist.
 func (w *Where) Append(a *Where) *Where {
 	if a != nil {
 		w.Conditions = append(w.Conditions, a.Conditions...)

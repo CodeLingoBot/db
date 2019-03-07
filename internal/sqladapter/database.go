@@ -233,7 +233,7 @@ func (d *database) BindTx(ctx context.Context, t *sql.Tx) error {
 	return nil
 }
 
-// Tx returns a BaseTx, which, if not nil, means that this session is within a
+// Transaction: Tx returns a BaseTx, which, if not nil, means that this session is within a
 // transaction
 func (d *database) Transaction() BaseTx {
 	return d.baseTx

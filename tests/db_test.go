@@ -494,12 +494,12 @@ type timeType struct {
 	value time.Time
 }
 
-// time.Time -> unix timestamp
+// MarshalDB: time.Time -> unix timestamp
 func (u timeType) MarshalDB() (interface{}, error) {
 	return u.value.Unix(), nil
 }
 
-// unix timestamp -> time.Time
+// UnmarshalDB: unix timestamp -> time.Time
 func (u *timeType) UnmarshalDB(v interface{}) error {
 	var unixTime int64
 

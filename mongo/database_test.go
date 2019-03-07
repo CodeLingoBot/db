@@ -96,7 +96,7 @@ func init() {
 	}
 }
 
-// Attempts to open an empty datasource.
+// TestOpenWithWrongData: Attempts to open an empty datasource.
 func TestOpenWithWrongData(t *testing.T) {
 	var err error
 	var rightSettings, wrongSettings ConnectionURL
@@ -152,7 +152,7 @@ func TestOpenWithWrongData(t *testing.T) {
 	}
 }
 
-// Truncates all collections.
+// TestTruncate: Truncates all collections.
 func TestTruncate(t *testing.T) {
 
 	var err error
@@ -194,7 +194,7 @@ func TestTruncate(t *testing.T) {
 	}
 }
 
-// This test appends some data into the "artist" table.
+// TestInsert: appends some data into the "artist" table.
 func TestInsert(t *testing.T) {
 
 	var err error
@@ -344,7 +344,7 @@ func TestGetNonExistentRow_Issue426(t *testing.T) {
 	assert.Equal(t, 0, len(all))
 }
 
-// This test tries to use an empty filter and count how many elements were
+// TestResultCount: tries to use an empty filter and count how many elements were
 // added into the artist collection.
 func TestResultCount(t *testing.T) {
 
@@ -432,7 +432,7 @@ func TestGroup(t *testing.T) {
 
 }
 
-// Attempts to count all rows in a table that does not exist.
+// TestResultNonExistentCount: Attempts to count all rows in a table that does not exist.
 func TestResultNonExistentCount(t *testing.T) {
 	sess, err := Open(settings)
 
@@ -453,7 +453,7 @@ func TestResultNonExistentCount(t *testing.T) {
 	}
 }
 
-// This test uses and result and tries to fetch items one by one.
+// TestResultFetch: uses and result and tries to fetch items one by one.
 func TestResultFetch(t *testing.T) {
 
 	var err error
@@ -587,7 +587,7 @@ func TestResultFetch(t *testing.T) {
 	}
 }
 
-// This test tries to update some previously added rows.
+// TestUpdate: tries to update some previously added rows.
 func TestUpdate(t *testing.T) {
 	var err error
 
@@ -715,7 +715,7 @@ func TestOperators(t *testing.T) {
 	res.Close()
 }
 
-// This test tries to remove some previously added rows.
+// TestDelete: tries to remove some previously added rows.
 func TestDelete(t *testing.T) {
 
 	var err error
@@ -756,7 +756,7 @@ func TestDelete(t *testing.T) {
 	}
 }
 
-// This test tries to add many different datatypes to a single row in a
+// TestDataTypes: tries to add many different datatypes to a single row in a
 // collection, then it tries to get the stored datatypes and check if the
 // stored and the original values match.
 func TestDataTypes(t *testing.T) {
